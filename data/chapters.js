@@ -1,0 +1,98 @@
+/* =========================================================
+   CHAPTERS
+   Pulled from the live "Interwoven Chapters" Google Sheet.
+   lat/lng are public city coordinates, added here so the
+   Chapters page map (Leaflet + OpenStreetMap, no API key)
+   can plot pins without a geocoding service.
+   Re-sync this file by hand whenever the sheet changes.
+   ========================================================= */
+window.IW_CHAPTERS = [
+  {
+    id: "tanta",
+    name: "Interwoven Tanta",
+    president: "Jana Islam",
+    city: "Tanta",
+    region: "Gharbia Governorate",
+    country: "Egypt",
+    timezone: "EEST",
+    email: "janaislamradwan312@gmail.com",
+    lat: 30.7865, lng: 31.0004,
+  },
+  {
+    id: "toronto",
+    name: "Interwoven Toronto",
+    president: "Aryaman Mehra",
+    city: "Toronto",
+    region: "Ontario",
+    country: "Canada",
+    timezone: "ET",
+    email: "aryamanqax@gmail.com",
+    lat: 43.6532, lng: -79.3832,
+  },
+  {
+    id: "santa-clara",
+    name: "Interwoven Santa Clara",
+    president: "Nakhshathra Jakkula",
+    city: "Santa Clara",
+    region: "California",
+    country: "USA",
+    timezone: "PT",
+    email: "nakshathra.jakkula@gmail.com",
+    lat: 37.3541, lng: -121.9552,
+  },
+  {
+    id: "quena",
+    name: "Interwoven Quena",
+    president: "Salma Mahmoud",
+    city: "Quena",
+    region: "Qena Governorate",
+    country: "Egypt",
+    timezone: "EEST",
+    email: "aseelmahmoud399@gmail.com",
+    lat: 26.1551, lng: 32.7160,
+  },
+  {
+    id: "west-greenwich",
+    name: "Interwoven West Greenwich",
+    president: "Priya Cordeiro",
+    city: "West Greenwich",
+    region: "Rhode Island",
+    country: "USA",
+    timezone: "ET",
+    email: "priyac10@icloud.com",
+    lat: 41.6598, lng: -71.6551,
+  },
+  {
+    id: "ngong",
+    name: "Interwoven Ngong",
+    president: "James Ouma",
+    city: "Ngong",
+    region: "Kajiado County",
+    country: "Kenya",
+    timezone: "EAT",
+    email: "ojamesouma@gmail.com",
+    lat: -1.3667, lng: 36.6500,
+  },
+  {
+    id: "south-charleston",
+    name: "Interwoven South Charleston",
+    president: "Hawa Ibrahim",
+    city: "South Charleston",
+    region: "West Virginia",
+    country: "USA",
+    timezone: "ET",
+    email: "hibrah09@gmail.com",
+    lat: 38.3676, lng: -81.6995,
+  },
+  {
+    id: "massachusetts",
+    name: "Interwoven Massachusetts",
+    president: "Hamsi & Dhatri",
+    city: "Massachusetts",
+    region: "",
+    country: "USA",
+    timezone: "ET",
+    email: "dhawith3@gmail.com, hamsikadevineni@gmail.com",
+    lat: 42.4072, lng: -71.3824,
+  },
+];
