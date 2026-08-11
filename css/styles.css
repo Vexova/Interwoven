@@ -367,54 +367,6 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 }
 .icon-btn:hover{ border-color: var(--teal-deep); background: var(--cream-deep); }
 
-/* ---------- Newsletter popup (bottom sheet) ---------- */
-.newsletter-sheet{
-  position: fixed; left: 0; right: 0; bottom: 0; z-index: 500;
-  display: flex; justify-content: center;
-  padding: 16px;
-  transform: translateY(120%);
-  transition: transform var(--dur-slow) var(--ease);
-  pointer-events: none;
-}
-.newsletter-sheet.is-open{ transform: translateY(0); pointer-events: all; }
-.newsletter-inner{
-  width: 100%; max-width: 620px;
-  background: var(--surface);
-  border-radius: var(--r-lg) var(--r-lg) var(--r-lg) var(--r-lg);
-  box-shadow: var(--shadow-lg);
-  padding: 26px 30px;
-  display: flex; align-items: center; gap: 22px; flex-wrap: wrap;
-  border: 1px solid var(--border);
-  position: relative;
-}
-.newsletter-inner::before{
-  content:""; position: absolute; top: 0; left: 24px; right: 24px; height: 3px;
-  background: linear-gradient(90deg, var(--teal), var(--coral), var(--amber));
-  border-radius: 0 0 4px 4px;
-}
-.newsletter-close{
-  position: absolute; top: 10px; right: 12px;
-  width: 32px; height: 32px; border-radius: 50%; border: none; background: transparent;
-  font-size: 1.1rem; color: var(--text-soft);
-}
-.newsletter-close:hover{ background: var(--cream-deep); }
-.newsletter-text h3{ font-size: 1.15rem; }
-.newsletter-text p{ color: var(--text-soft); font-size: 0.88rem; margin-top: 4px; }
-.newsletter-form{ display: flex; gap: 10px; flex: 1 1 280px; }
-.newsletter-form input{
-  flex: 1; border: 1.5px solid var(--border); border-radius: var(--r-pill);
-  padding: 12px 18px; background: var(--cream); color: var(--text);
-  min-width: 0;
-}
-.newsletter-form input:focus{ border-color: var(--teal); }
-.newsletter-form button{ white-space: nowrap; flex-shrink: 0; }
-@media (max-width: 640px){
-  .newsletter-inner{ flex-direction: column; align-items: stretch; text-align: left; }
-  .newsletter-form{ flex-direction: column; }
-  .newsletter-form input{ flex: none; width: 100%; }
-  .newsletter-form button{ flex: none; width: 100%; }
-}
-
 /* ---------- Page transition sweep ---------- */
 .page-sweep{
   position: fixed; inset: 0; z-index: 900; pointer-events: none;

@@ -15,7 +15,6 @@
     initCounters();
     initThreadGlow();
     initPageSweep();
-    initNewsletterPopup();
     initFooterYear();
   });
 
@@ -190,51 +189,6 @@
         window.location.href = href;
       }, 320);
     });
-  }
-
-  /* ---------- Newsletter popup ---------- */
-  function initNewsletterPopup() {
-    const sheet = document.getElementById("newsletter-sheet");
-    if (!sheet) return;
-
-    const DISMISS_KEY = "iw_newsletter_dismissed_at";
-    const RESHOW_AFTER_MS = 1000 * 60 * 60 * 24 * 14; // 2 weeks
-
-    const dismissedAt = Number(localStorage.getItem(DISMISS_KEY) || 0);
-    if (dismissedAt && Date.now() - dismissedAt < RESHOW_AFTER_MS) return;
-
-    let shown = false;
-    function maybeShow() {
-      if (shown) return;
-      const scrolled = window.scrollY;
-      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-      if (scrollable > 0 && scrolled / scrollable >= 0.3) {
-        shown = true;
-        sheet.classList.add("is-open");
-        sheet.setAttribute("aria-hidden", "false");
-        window.removeEventListener("scroll", maybeShow);
-      }
-    }
-    window.addEventListener("scroll", maybeShow, { passive: true });
-
-    function dismiss() {
-      sheet.classList.remove("is-open");
-      sheet.setAttribute("aria-hidden", "true");
-      localStorage.setItem(DISMISS_KEY, String(Date.now()));
-    }
-    sheet.querySelectorAll("[data-close-newsletter]").forEach((btn) => btn.addEventListener("click", dismiss));
-
-    const form = sheet.querySelector("form");
-    if (form) {
-      form.addEventListener("submit", (e) => {
-        e.preventDefault();
-        // No backend yet — wire this to an email service (Mailchimp,
-        // ConvertKit, Google Forms, etc.) when ready. No confirmation
-        // message is shown; the sheet just closes.
-        dismiss();
-        form.reset();
-      });
-    }
   }
 
   /* ---------- Footer year ---------- */
