@@ -14,9 +14,15 @@
     return window.IWEscapeHTML ? window.IWEscapeHTML(s) : s;
   }
 
+  // Display-only: drop the "Interwoven" prefix so cards/pins show just
+  // the place name (e.g. "Interwoven Tanta" -> "Tanta"). The underlying
+  // c.name field is left untouched in the data file.
+  function placeName(name) {
+    return name.replace(/^Interwoven\s*/i, "").trim();
+  }
+
   function initials(name) {
-    return name
-      .replace(/^Interwoven\s*/i, "")
+    return placeName(name)
       .split(" ")
       .filter(Boolean)
       .slice(0, 2)
@@ -32,7 +38,7 @@
       (c) => `
       <div class="chapter-card" data-reveal>
         <div class="chapter-avatar">${esc(initials(c.name))}</div>
-        <h4 class="h4">${esc(c.name)}</h4>
+        <h4 class="h4">${esc(placeName(c.name))}</h4>
         <p class="loc">${esc([c.city, c.region, c.country].filter(Boolean).join(", "))}</p>
         <p class="text-soft" style="font-size:.85rem;">${esc(c.president)} &middot; President</p>
         <a href="mailto:${esc(c.email.split(",")[0].trim())}">Email chapter →</a>
@@ -90,11 +96,11 @@
     const bounds = [];
     chapters.forEach((c, i) => {
       const color = threadColors[i % threadColors.length];
-      const marker = L.marker([c.lat, c.lng], { icon: markerIcon(color), title: c.name }).addTo(map);
-      marker.bindTooltip(c.name, { direction: "top", offset: [0, -8] });
+      const marker = L.marker([c.lat, c.lng], { icon: markerIcon(color), title: placeName(c.name) }).addTo(map);
+      marker.bindTooltip(placeName(c.name), { direction: "top", offset: [0, -8] });
       marker.bindPopup(
         `<div class="map-popup">
-           <h4>${esc(c.name)}</h4>
+           <h4>${esc(placeName(c.name))}</h4>
            <p>${esc([c.city, c.region, c.country].filter(Boolean).join(", "))}</p>
            <p><strong>${esc(c.president)}</strong> &middot; Chapter President</p>
            <p><a href="mailto:${esc(c.email.split(",")[0].trim())}">${esc(c.email.split(",")[0].trim())}</a></p>

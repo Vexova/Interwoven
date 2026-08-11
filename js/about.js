@@ -21,14 +21,14 @@
     return window.IWEscapeHTML ? window.IWEscapeHTML(s) : s;
   }
 
-  /* ---------- Executive board ----------
+  /* ---------- Executive board + Social Media team ----------
      Info is exposed on hover AND on click/focus (not hover-only),
      so it works with keyboard and touch, not just a mouse. */
-  function renderBoard() {
-    const mount = document.getElementById("board-grid");
-    if (!mount || !window.IW_BOARD) return;
+  function renderBoardGroup(mountId, members) {
+    const mount = document.getElementById(mountId);
+    if (!mount || !members.length) return;
 
-    mount.innerHTML = window.IW_BOARD.map(
+    mount.innerHTML = members.map(
       (b) => `
       <button class="board-card" type="button" aria-expanded="false" data-id="${b.id}">
         <div class="board-photo tone-${b.tone}">
@@ -53,6 +53,18 @@
         card.setAttribute("aria-expanded", String(!open));
       });
     });
+  }
+
+  function renderBoard() {
+    if (!window.IW_BOARD) return;
+    renderBoardGroup(
+      "board-grid-exec",
+      window.IW_BOARD.filter((b) => b.team === "executive")
+    );
+    renderBoardGroup(
+      "board-grid-social",
+      window.IW_BOARD.filter((b) => b.team === "social")
+    );
   }
 
   /* ---------- Thread detail sections ---------- */

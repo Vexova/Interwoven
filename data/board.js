@@ -15,6 +15,7 @@ window.IW_BOARD = [
     email: "dhawith3@gmail.com",
     phone: "(508) 369-4069",
     tone: "teal",
+    team: "executive",
   },
   {
     id: "hamsika",
@@ -23,14 +24,7 @@ window.IW_BOARD = [
     email: "hamsikadevineni@gmail.com",
     phone: "(774) 789-7157",
     tone: "coral",
-  },
-  {
-    id: "sanam",
-    name: "Sanam Srikewal",
-    role: "Social Media & Design Director",
-    email: "sanams21@outlook.com",
-    phone: "",
-    tone: "amber",
+    team: "executive",
   },
   {
     id: "vedasri",
@@ -39,5 +33,15 @@ window.IW_BOARD = [
     email: "veda.pacharla@gmail.com",
     phone: "",
     tone: "ink",
+    team: "executive",
+  },
+  {
+    id: "sanam",
+    name: "Sanam Srikewal",
+    role: "Social Media & Design Director",
+    email: "sanams21@outlook.com",
+    phone: "",
+    tone: "amber",
+    team: "social",
   },
 ];

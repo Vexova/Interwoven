@@ -228,10 +228,11 @@
     if (form) {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        // No backend yet — acknowledge locally. Wire this to an email
-        // service (Mailchimp, ConvertKit, Google Forms, etc.) when ready.
-        form.innerHTML = '<p style="font-weight:600;color:var(--teal-deep);">You\'re on the thread. Thank you!</p>';
-        window.setTimeout(dismiss, 1600);
+        // No backend yet — wire this to an email service (Mailchimp,
+        // ConvertKit, Google Forms, etc.) when ready. No confirmation
+        // message is shown; the sheet just closes.
+        dismiss();
+        form.reset();
       });
     }
   }
