@@ -16,7 +16,6 @@
     initThreadGlow();
     initPageSweep();
     initNewsletterModal();
-    initFooterNewsletter();
     initFooterYear();
   });
 
@@ -237,17 +236,6 @@
         form.reset();
       });
     }
-  }
-
-  /* ---------- Footer newsletter mini-form ---------- */
-  function initFooterNewsletter() {
-    const form = document.getElementById("footer-newsletter-form");
-    if (!form) return;
-    form.addEventListener("submit", (e) => {
-      e.preventDefault();
-      // No backend yet -- wire this to an email service when ready.
-      form.reset();
-    });
   }
 
   /* ---------- Footer year ---------- */

@@ -404,20 +404,6 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 .newsletter-modal input:focus{ border-color: var(--teal); }
 .newsletter-modal button{ padding: 15px 20px; }
 
-/* ---------- Footer newsletter mini-section ---------- */
-.footer-newsletter{ margin-bottom: 44px; padding-bottom: 40px; border-bottom: 1px solid rgba(250,246,234,0.14); }
-.footer-newsletter h4{ color: var(--cream); font-size: 1.2rem; margin-bottom: 8px; font-family: var(--font-display); font-weight: 700; }
-.footer-newsletter p{ color: rgba(250,246,234,0.65); font-size: 0.85rem; margin-bottom: 16px; max-width: 46ch; }
-.footer-newsletter form{ display: flex; gap: 10px; max-width: 440px; flex-wrap: wrap; }
-.footer-newsletter input{
-  flex: 1 1 220px; border: 1.5px solid rgba(250,246,234,0.28); border-radius: var(--r-pill);
-  padding: 12px 20px; background: transparent; color: var(--cream);
-  min-width: 0;
-}
-.footer-newsletter input::placeholder{ color: rgba(250,246,234,0.5); }
-.footer-newsletter input:focus{ border-color: var(--amber); outline: none; }
-.footer-newsletter button{ flex-shrink: 0; }
-
 /* ---------- Page transition sweep ---------- */
 .page-sweep{
   position: fixed; inset: 0; z-index: 900; pointer-events: none;
