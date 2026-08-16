@@ -1,7 +1,7 @@
 /* =========================================================
    EXECUTIVE BOARD
    Headshots are Google Drive links that can't be auto-fetched
-   into this sandbox — see assets/README.md for how to add the
+   into this sandbox – see assets/README.md for how to add the
    real files. This section is intentionally built to keep
    working with placeholders since Sanam and Vedasri's headshots
    are "coming later" and Interwoven is actively recruiting more
@@ -16,6 +16,7 @@ window.IW_BOARD = [
     phone: "(508) 369-4069",
     tone: "teal",
     team: "executive",
+    photo: "assets/images/dhatri-headshot.jpeg",
   },
   {
     id: "hamsika",
@@ -25,6 +26,7 @@ window.IW_BOARD = [
     phone: "(774) 789-7157",
     tone: "coral",
     team: "executive",
+    photo: "assets/images/hamsika-headshot.png",
   },
   {
     id: "vedasri",

@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Donate — Interwoven</title>
+<title>Donate – Interwoven</title>
 <meta name="description" content="Support Interwoven's work connecting students and communities through STEAM. Every gift funds real chapters, real workshops, and real students.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
 <header class="site-header">
   <div class="header-inner">
     <a href="index.html" class="brand" aria-label="Interwoven home">
-      <img src="assets/logo-full-sm.png" alt="Interwoven — Woven Together Through STEAM" height="58" width="112">
+      <img src="assets/logo-full-sm.png" alt="Interwoven – Woven Together Through STEAM" height="58" width="112">
     </a>
     <nav class="primary-nav" id="primary-nav" aria-label="Primary">
       <a href="index.html">Home</a>
@@ -59,7 +59,7 @@
         <div class="card" style="padding:28px;">
           <span class="eyebrow">02</span>
           <h3 class="h3" style="margin-top:14px;">Why it matters</h3>
-          <p class="text-soft" style="margin-top:12px;">Every chapter on our map — from Tanta to Toronto to Santa Clara — started because someone decided access to STEAM shouldn't be optional. Your donation is what lets that decision reach the next student.</p>
+          <p class="text-soft" style="margin-top:12px;">Every chapter on our map – from Tanta to Toronto to Santa Clara – started because someone decided access to STEAM shouldn't be optional. Your donation is what lets that decision reach the next student.</p>
         </div>
 
         <div class="card" style="padding:28px;">
@@ -88,9 +88,34 @@
 
 </main>
 
+
+<!-- Newsletter modal -->
+<div class="newsletter-overlay" id="newsletter-overlay" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Newsletter signup">
+  <div class="newsletter-modal">
+    <button class="newsletter-modal-close" data-close-newsletter aria-label="Dismiss">&times;</button>
+    <span class="eyebrow">Stay in the Thread</span>
+    <h3>Get Interwoven updates</h3>
+    <p>Events, opportunities, and stories from Interwoven – straight to your inbox.</p>
+    <form>
+      <label for="newsletter-modal-email" class="visually-hidden">Email address</label>
+      <input type="email" id="newsletter-modal-email" placeholder="Email address" required>
+      <button type="submit" class="btn btn-primary">Join the Community</button>
+    </form>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-word">INTERWOVEN</div>
+        <div class="footer-newsletter">
+      <h4>Stay Amused!?</h4>
+      <p>Get Interwoven events, opportunities, and stories straight to your inbox.</p>
+      <form id="footer-newsletter-form">
+        <label for="footer-newsletter-email" class="visually-hidden">Email address</label>
+        <input type="email" id="footer-newsletter-email" placeholder="Email address" required>
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
     <div class="footer-row">
       <div class="footer-col">
         <h4>Connect</h4>
@@ -116,7 +141,7 @@
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; <span data-year></span> Interwoven. All rights reserved. We are a registered 501(c)(3) nonprofit organization.</span>
+      <span>&copy; <span data-year></span> Interwoven. All rights reserved. We are a registered nonprofit organization, fiscally sponsored by the Hack Foundation, a 501(c)(3) public charity.</span>
       <a href="https://hcb.hackclub.com/donations/start/interwoven" target="_blank" rel="noopener">Donate →</a>
     </div>
   </div>

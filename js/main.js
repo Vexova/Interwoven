@@ -1,5 +1,5 @@
 /* =========================================================
-   INTERWOVEN — SHARED SITE BEHAVIOR
+   INTERWOVEN – SHARED SITE BEHAVIOR
    Include on every page, before any page-specific script.
    ========================================================= */
 (function () {
@@ -15,12 +15,14 @@
     initCounters();
     initThreadGlow();
     initPageSweep();
+    initNewsletterModal();
+    initFooterNewsletter();
     initFooterYear();
   });
 
   /* ---------- Header: transparent over hero, solid on scroll ----------
      Pages without a tall .hero (every interior page) keep the header
-     solid at all times — there's no scroll runway to be transparent
+     solid at all times – there's no scroll runway to be transparent
      over, and being transparent there would sit on top of content. */
   function initHeader() {
     const header = document.querySelector(".site-header");
@@ -188,6 +190,63 @@
       window.setTimeout(() => {
         window.location.href = href;
       }, 320);
+    });
+  }
+
+  /* ---------- Newsletter modal (shown once per visit window, after a short delay so it's actually seen) ---------- */
+  function initNewsletterModal() {
+    const overlay = document.getElementById("newsletter-overlay");
+    if (!overlay) return;
+
+    const DISMISS_KEY = "iw_newsletter_dismissed_at";
+    const RESHOW_AFTER_MS = 1000 * 60 * 60 * 24 * 14; // 2 weeks
+    const dismissedAt = Number(localStorage.getItem(DISMISS_KEY) || 0);
+    if (dismissedAt && Date.now() - dismissedAt < RESHOW_AFTER_MS) return;
+
+    function open() {
+      overlay.classList.add("is-open");
+      overlay.setAttribute("aria-hidden", "false");
+    }
+    function dismiss() {
+      overlay.classList.remove("is-open");
+      overlay.setAttribute("aria-hidden", "true");
+      localStorage.setItem(DISMISS_KEY, String(Date.now()));
+    }
+
+    window.setTimeout(() => {
+      if (!window.IW_REDUCED_MOTION) open();
+      else open(); // still show for reduced-motion users, just without the entrance animation
+    }, 2500);
+
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) dismiss();
+    });
+    overlay.querySelectorAll("[data-close-newsletter]").forEach((btn) => btn.addEventListener("click", dismiss));
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && overlay.classList.contains("is-open")) dismiss();
+    });
+
+    const form = overlay.querySelector("form");
+    if (form) {
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // No backend yet -- wire this to an email service (Mailchimp,
+        // ConvertKit, Google Forms, etc.) when ready. No confirmation
+        // message is shown; the modal just closes.
+        dismiss();
+        form.reset();
+      });
+    }
+  }
+
+  /* ---------- Footer newsletter mini-form ---------- */
+  function initFooterNewsletter() {
+    const form = document.getElementById("footer-newsletter-form");
+    if (!form) return;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      // No backend yet -- wire this to an email service when ready.
+      form.reset();
     });
   }
 

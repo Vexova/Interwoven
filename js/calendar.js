@@ -1,13 +1,13 @@
 /* =========================================================
    CALENDAR PAGE BEHAVIOR
    Embeds the real, live Interwoven Google Calendar (decoded
-   from the cid= param in the calendar link in the brief) — no
+   from the cid= param in the calendar link in the brief) – no
    API key required for a read-only embed.
 
    NOTE ON FILTERS: Google's free embed iframe doesn't expose a
    way to filter *within* an embedded calendar by custom category
    from the outside (that needs the Calendar API + a key). The
-   type/chapter chips below are wired up and ready — once
+   type/chapter chips below are wired up and ready – once
    Interwoven adds a Calendar API key, swap fetchEventsViaAPI()
    in place of the iframe to get real client-side filtering.
    ========================================================= */

@@ -32,7 +32,11 @@
       (b) => `
       <button class="board-card" type="button" aria-expanded="false" data-id="${b.id}">
         <div class="board-photo tone-${b.tone}">
-          <span>[Headshot: ${esc(b.name)} — see assets/README.md]</span>
+          ${
+            b.photo
+              ? `<img src="${b.photo}" alt="${esc(b.name)}">`
+              : `<span>[Headshot: ${esc(b.name)} – see assets/README.md]</span>`
+          }
         </div>
         <div class="board-name">${esc(b.name)}</div>
         <div class="board-detail">

@@ -1,6 +1,6 @@
 /* =========================================================
    CONTACT PAGE BEHAVIOR
-   The contact form was removed — this page now just shows
+   The contact form was removed – this page now just shows
    direct contact info (email, chapters, get involved, social)
    plus the FAQ accordion below.
    ========================================================= */

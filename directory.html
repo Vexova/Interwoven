@@ -3,12 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Chapters – Interwoven</title>
-<meta name="description" content="Find an Interwoven chapter near you, or start your own. Real chapters currently active across Egypt, Canada, the US, and Kenya.">
+<title>Full Directory – Interwoven</title>
+<meta name="description" content="The full Interwoven directory: Executive Board, Social Media Team, and every chapter president across our network.">
+<meta property="og:title" content="Full Directory – Interwoven">
+<meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -16,7 +17,7 @@
 
 <div class="page-sweep" id="page-sweep" aria-hidden="true"><span class="band"></span><span class="band"></span><span class="band"></span></div>
 
-<header class="site-header">
+<header class="site-header is-solid">
   <div class="header-inner">
     <a href="index.html" class="brand" aria-label="Interwoven home">
       <img src="assets/logo-full-sm.png" alt="Interwoven – Woven Together Through STEAM" height="58" width="112">
@@ -42,38 +43,37 @@
 
   <section class="section-tight">
     <div class="wrap">
-      <span class="eyebrow">Chapters</span>
-      <h1 class="h1" style="margin-top:16px; max-width:16ch;">Find your thread</h1>
-      <p class="lede" style="margin-top:14px;">Interwoven chapters are active across four countries – with more starting all the time.</p>
-    </div>
-  </section>
-
-  <section class="section-tight">
-    <div class="wrap">
-      <div id="chapters-map" data-reveal role="region" aria-label="Map of Interwoven chapter locations"></div>
-      <p class="text-soft" style="font-size:.78rem; margin-top:10px;">Map data &copy; OpenStreetMap contributors. Every chapter is also listed as text below the map.</p>
+      <p class="breadcrumb"><a href="index.html">Home</a> / <a href="about.html">About</a> / Full Directory</p>
+      <span class="eyebrow">Full Directory</span>
+      <h1 class="h1" style="margin-top:16px; max-width:20ch;">Everyone woven into Interwoven</h1>
+      <p class="lede" style="margin-top:14px;">The Executive Board, Social Media Team, and every chapter president across our network. Headshots are still being collected for many chapter leads – placeholders will be replaced as they come in.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <div class="section-head" data-reveal>
-        <span class="eyebrow">Chapter Directory</span>
-        <h2 style="margin-top:16px;">Every Interwoven chapter</h2>
-      </div>
-      <div class="chapter-directory" id="chapter-directory"></div>
+      <h3 class="h4" style="margin-bottom:20px;">Executive Board &amp; Social Media Team</h3>
+      <div class="board-grid" id="directory-board" data-reveal></div>
     </div>
   </section>
 
   <section class="section" style="background:var(--cream-deep);">
     <div class="wrap">
-      <div class="cta-band" style="background:var(--ink);" data-reveal>
-        <h2>Don't see your city?</h2>
-        <p class="lede" style="margin:12px auto 28px;">Starting a chapter is the fastest way to bring Interwoven to your community.</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSeIQObUQAg8QZaMSwsiMjLyFWcMjnon-6xdcDRq2bMe93W3mg/viewform?usp=header" target="_blank" rel="noopener" class="btn btn-primary">
-          Start a Chapter
-          <svg class="trace" viewBox="0 0 170 54" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="168" height="52" rx="26"/></svg>
-        </a>
+      <h3 class="h4" style="margin-bottom:20px;">Chapter Presidents</h3>
+      <div class="board-grid" id="directory-chapters" data-reveal></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="cta-band" data-reveal>
+        <h2>Don't see your chapter yet?</h2>
+        <p class="lede" style="margin:12px auto 28px;">Starting a chapter adds you straight to this directory.</p>
+        <div class="hero-actions">
+          <a href="get-involved.html#start-a-chapter" class="btn btn-primary">Start a Chapter
+            <svg class="trace" viewBox="0 0 170 54" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="168" height="52" rx="26"/></svg>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -139,9 +139,9 @@
   </div>
 </footer>
 
+<script src="data/board.js"></script>
 <script src="data/chapters.js"></script>
 <script src="js/main.js"></script>
-<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-<script src="js/chapters.js"></script>
+<script src="js/directory.js"></script>
 </body>
 </html>

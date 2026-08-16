@@ -49,7 +49,7 @@
 
   /* ---------- Map ----------
      Uses Leaflet + OpenStreetMap tiles (no API key). If the Leaflet
-     library didn't load — e.g. no network access — show a clear
+     library didn't load – e.g. no network access – show a clear
      fallback instead of a broken/blank map. */
   function initMap() {
     const el = document.getElementById("chapters-map");
