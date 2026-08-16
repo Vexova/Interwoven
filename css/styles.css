@@ -326,15 +326,17 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 .podcast-card{
   background: var(--surface); border-radius: var(--r-lg); overflow: hidden;
   border: 1px solid var(--border); box-shadow: var(--shadow-md);
-  padding: clamp(32px,5vw,52px);
-  display: flex; flex-direction: column; gap: 14px;
+  padding: clamp(40px,7vw,72px);
+  display: flex; flex-direction: column; gap: 20px;
   position: relative;
 }
 .podcast-card::before{
   content:""; position: absolute; top: 0; left: 0; right: 0; height: 4px;
   background: linear-gradient(90deg, var(--teal), var(--coral), var(--amber));
 }
-.podcast-ep{ font-weight: 700; color: var(--coral-deep); letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.8rem; }
+.podcast-ep{ font-weight: 700; color: var(--coral-deep); letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.8rem; margin-top: 6px; }
+.podcast-card h3{ font-size: var(--step-1); }
+.podcast-card p{ max-width: 62ch; line-height: 1.7; }
 
 /* ---------- Testimonial thread carousel ---------- */
 .testi-wrap{ position: relative; max-width: 760px; margin-inline: auto; }
