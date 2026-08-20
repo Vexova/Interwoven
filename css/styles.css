@@ -482,14 +482,9 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 .visually-hidden{ position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
 /* ---------- Split hero (About) ---------- */
-.split-hero{ display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
-@media (max-width: 820px){ .split-hero{ grid-template-columns: 1fr; } }
-.split-block{ padding: clamp(32px,5vw,56px); border-radius: var(--r-lg); box-shadow: var(--shadow-md); }
-.split-block.story{ background: var(--surface); }
-.split-block.mission{ background: var(--teal-deep); color: var(--cream); }
-.split-block.mission h3, .split-block.mission p{ color: var(--cream); }
-.split-block .eyebrow{ margin-bottom: 14px; }
-.split-block.mission .eyebrow{ color: var(--amber); }
+.plain-block{ max-width: 72ch; margin-bottom: 56px; }
+.plain-block:last-child{ margin-bottom: 0; }
+.plain-block p{ color: var(--text-soft); }
 
 /* ---------- Executive board ---------- */
 .board-grid{ display: grid; grid-template-columns: repeat(4, 1fr); gap: 22px; align-items: start; }
