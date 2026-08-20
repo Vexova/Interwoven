@@ -21,15 +21,6 @@
     return name.replace(/^Interwoven\s*/i, "").trim();
   }
 
-  function initials(name) {
-    return placeName(name)
-      .split(" ")
-      .filter(Boolean)
-      .slice(0, 2)
-      .map((w) => w[0].toUpperCase())
-      .join("");
-  }
-
   /* ---------- Directory cards ---------- */
   function renderDirectory() {
     const mount = document.getElementById("chapter-directory");
@@ -37,10 +28,9 @@
     mount.innerHTML = window.IW_CHAPTERS.map(
       (c) => `
       <div class="chapter-card" data-reveal>
-        <div class="chapter-avatar">${esc(initials(c.name))}</div>
         <h4 class="h4">${esc(placeName(c.name))}</h4>
         <p class="loc">${esc([c.city, c.region, c.country].filter(Boolean).join(", "))}</p>
-        <p class="text-soft" style="font-size:.85rem;">${esc(c.president)} &middot; President</p>
+        <p class="text-soft" style="font-size:.85rem;">${esc(c.president)} &middot; ${esc(c.roleLabel || "President")}</p>
         <a href="mailto:${esc(c.email.split(",")[0].trim())}">Email chapter →</a>
       </div>`
     ).join("");
@@ -65,7 +55,7 @@
       return;
     }
 
-    const map = L.map(el, { scrollWheelZoom: false }).setView([20, 10], 2);
+    const map = L.map(el, { scrollWheelZoom: true }).setView([20, 10], 2);
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 18,
@@ -96,14 +86,15 @@
     const bounds = [];
     chapters.forEach((c, i) => {
       const color = threadColors[i % threadColors.length];
+      const emails = c.email.split(",").map((e) => e.trim()).join(" & ");
       const marker = L.marker([c.lat, c.lng], { icon: markerIcon(color), title: placeName(c.name) }).addTo(map);
       marker.bindTooltip(placeName(c.name), { direction: "top", offset: [0, -8] });
       marker.bindPopup(
         `<div class="map-popup">
            <h4>${esc(placeName(c.name))}</h4>
            <p>${esc([c.city, c.region, c.country].filter(Boolean).join(", "))}</p>
-           <p><strong>${esc(c.president)}</strong> &middot; Chapter President</p>
-           <p><a href="mailto:${esc(c.email.split(",")[0].trim())}">${esc(c.email.split(",")[0].trim())}</a></p>
+           <p><strong>${esc(c.president)}</strong> &middot; ${esc(c.roleLabel || "Chapter President")}</p>
+           <p>${emails.split(" & ").map((e) => `<a href="mailto:${esc(e)}">${esc(e)}</a>`).join(" &amp; ")}</p>
          </div>`
       );
       bounds.push([c.lat, c.lng]);

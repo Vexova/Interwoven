@@ -8,6 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -49,14 +53,33 @@
 
   <section class="section-tight">
     <div class="wrap">
-      <div class="filter-chips" data-reveal>
-        <button class="chip" data-cal-filter aria-pressed="true" type="button">All</button>
-        <button class="chip" data-cal-filter aria-pressed="false" type="button">In-Person Workshops</button>
-        <button class="chip" data-cal-filter aria-pressed="false" type="button">Online Workshops</button>
-        <button class="chip" data-cal-filter aria-pressed="false" type="button">In-Person Conferences &amp; Summits</button>
-        <button class="chip" data-cal-filter aria-pressed="false" type="button">Online Conferences &amp; Summits</button>
-        <button class="chip" data-cal-filter aria-pressed="false" type="button">Podcast Recordings</button>
-        <button class="chip" data-cal-filter aria-pressed="false" type="button">By Chapter</button>
+      <div class="cal-filters" data-reveal>
+        <button class="chip" data-cal-filter="all" aria-pressed="true" type="button">All</button>
+
+        <div class="cal-dropdown">
+          <button class="chip cal-dropdown-toggle" type="button" aria-expanded="false">
+            In-Person
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="cal-dropdown-menu" role="menu">
+            <button type="button" data-cal-filter="in-person-workshops" role="menuitem">Workshops</button>
+            <button type="button" data-cal-filter="in-person-conferences" role="menuitem">Conferences and Summits</button>
+          </div>
+        </div>
+
+        <div class="cal-dropdown">
+          <button class="chip cal-dropdown-toggle" type="button" aria-expanded="false">
+            Online
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="cal-dropdown-menu" role="menu">
+            <button type="button" data-cal-filter="online-workshops" role="menuitem">Workshops</button>
+            <button type="button" data-cal-filter="online-conferences" role="menuitem">Conferences and Summits</button>
+          </div>
+        </div>
+
+        <button class="chip" data-cal-filter="podcast" aria-pressed="false" type="button">Podcast Recording Times</button>
+        <button class="chip" data-cal-filter="chapter" aria-pressed="false" type="button">By Chapter</button>
       </div>
       <p class="text-soft" style="font-size:.8rem; margin-bottom:20px;">Filters above are wired up for when Interwoven adds calendar categories – the live calendar below already shows everything scheduled.</p>
 
@@ -73,18 +96,6 @@
       <p class="text-soft" style="font-size:.82rem; margin-top:16px;">
         Prefer your own calendar app? <a href="https://calendar.google.com/calendar/u/0?cid=YmQ3MjZkYmExNDc3ZmNiNDgwMzIzMTBmM2EzMDRkYzQyYzIyZGJjNDdlN2Y4ODI3YjI5ZjZkYmE4NTYyMjgwMEBncm91cC5jYWxlbmRhci5nb29nbGUuY29t" target="_blank" rel="noopener" style="color:var(--teal-deep); font-weight:600;">Open the full calendar and subscribe →</a>
       </p>
-    </div>
-  </section>
-
-  <section class="section" style="background:var(--cream-deep);">
-    <div class="wrap">
-      <div class="cta-band" style="background:var(--teal-deep);" data-reveal>
-        <h2>Hosting something?</h2>
-        <p class="lede" style="margin:12px auto 28px;">Chapter leads can request an event be added to the shared calendar.</p>
-        <a href="contact.html" class="btn btn-primary">Contact Us
-          <svg class="trace" viewBox="0 0 150 54" preserveAspectRatio="none" aria-hidden="true"><rect x="1" y="1" width="148" height="52" rx="26"/></svg>
-        </a>
-      </div>
     </div>
   </section>
 
@@ -109,7 +120,16 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-word">INTERWOVEN</div>
-        <div class="footer-row">
+            <div class="footer-newsletter">
+      <h4>Stay Amused!?</h4>
+      <p>Sign up for Threads of Tomorrow, Interwoven's newsletter, for events, opportunities, and stories.</p>
+      <form id="footer-newsletter-form">
+        <label for="footer-newsletter-email" class="visually-hidden">Email address</label>
+        <input type="email" id="footer-newsletter-email" placeholder="Email address" required>
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-row">
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="about.html">About</a>

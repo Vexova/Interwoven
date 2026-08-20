@@ -4,12 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Full Directory – Interwoven</title>
-<meta name="description" content="The full Interwoven directory: Executive Board, Social Media Team, and every chapter president across our network.">
+<meta name="description" content="The full Interwoven directory: Executive Board and every chapter president across our network.">
 <meta property="og:title" content="Full Directory – Interwoven">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -46,20 +50,18 @@
       <p class="breadcrumb"><a href="index.html">Home</a> / <a href="about.html">About</a> / Full Directory</p>
       <span class="eyebrow">Full Directory</span>
       <h1 class="h1" style="margin-top:16px; max-width:20ch;">Everyone woven into Interwoven</h1>
-      <p class="lede" style="margin-top:14px;">The Executive Board, Social Media Team, and every chapter president across our network. Headshots are still being collected for many chapter leads – placeholders will be replaced as they come in.</p>
+      <p class="lede" style="margin-top:14px;">The Executive Board and every chapter president across our network. Hover a card for contact info – headshots are still being collected for many chapter leads, so placeholders will be replaced as they come in.</p>
     </div>
   </section>
 
   <section class="section">
     <div class="wrap">
-      <h3 class="h4" style="margin-bottom:20px;">Executive Board &amp; Social Media Team</h3>
       <div class="board-grid" id="directory-board" data-reveal></div>
     </div>
   </section>
 
   <section class="section" style="background:var(--cream-deep);">
     <div class="wrap">
-      <h3 class="h4" style="margin-bottom:20px;">Chapter Presidents</h3>
       <div class="board-grid" id="directory-chapters" data-reveal></div>
     </div>
   </section>
@@ -99,7 +101,16 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-word">INTERWOVEN</div>
-        <div class="footer-row">
+            <div class="footer-newsletter">
+      <h4>Stay Amused!?</h4>
+      <p>Sign up for Threads of Tomorrow, Interwoven's newsletter, for events, opportunities, and stories.</p>
+      <form id="footer-newsletter-form">
+        <label for="footer-newsletter-email" class="visually-hidden">Email address</label>
+        <input type="email" id="footer-newsletter-email" placeholder="Email address" required>
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-row">
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="about.html">About</a>

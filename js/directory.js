@@ -1,10 +1,10 @@
 /* =========================================================
    FULL DIRECTORY PAGE BEHAVIOR
-   Combines the Executive Board / Social Media Team (data/board.js)
-   with every chapter president (data/chapters.js) into one
-   directory. Headshots are still being collected for chapter
-   leads, so cards fall back to the same placeholder pattern used
-   on the About page until real photos are added.
+   Combines the Executive Board (data/board.js) with every chapter
+   president (data/chapters.js) into one directory. Headshots are
+   still being collected for chapter leads, so cards fall back to
+   the same placeholder pattern used on the About page until real
+   photos are added.
    ========================================================= */
 (function () {
   "use strict";
@@ -32,10 +32,12 @@
           }
         </div>
         <div class="board-name">${esc(entry.name)}</div>
+        <p class="board-role">${esc(entry.role)}</p>
+        ${entry.alwaysShowPhone && entry.phone ? `<p class="board-role always-phone">${esc(entry.phone)}</p>` : ""}
         <div class="board-detail">
           <div class="inner">
-            <p style="font-weight:600; color:var(--text);">${esc(entry.role)}</p>
             <a href="mailto:${esc(entry.email)}">${esc(entry.email)}</a>
+            ${entry.phone && !entry.alwaysShowPhone ? `<p>${esc(entry.phone)}</p>` : ""}
           </div>
         </div>
         <p class="toggle-hint">Tap for contact info</p>
@@ -45,11 +47,19 @@
   function renderDirectory() {
     const tones = ["teal", "coral", "amber", "ink"];
 
-    // Executive Board + Social Media Team
+    // Executive Board
     const boardMount = document.getElementById("directory-board");
     if (boardMount && window.IW_BOARD) {
       boardMount.innerHTML = window.IW_BOARD.map((b) =>
-        cardHTML({ name: b.name, role: b.role, email: b.email, tone: b.tone, photo: b.photo })
+        cardHTML({
+          name: b.name,
+          role: b.role,
+          email: b.email,
+          phone: b.phone,
+          alwaysShowPhone: b.alwaysShowPhone,
+          tone: b.tone,
+          photo: b.photo,
+        })
       ).join("");
     }
 
@@ -59,7 +69,7 @@
       chapterMount.innerHTML = window.IW_CHAPTERS.map((c, i) =>
         cardHTML({
           name: c.president,
-          role: `Chapter President, ${placeName(c.name)}`,
+          role: `${c.roleLabel || "Chapter President"}, ${placeName(c.name)}`,
           email: c.email.split(",")[0].trim(),
           tone: tones[i % tones.length],
           photo: null,

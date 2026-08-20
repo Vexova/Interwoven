@@ -8,6 +8,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="icon" href="assets/favicon-16.png" type="image/png" sizes="16x16">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -42,7 +46,7 @@
   <section class="section-tight">
     <div class="wrap">
       <span class="eyebrow">Contact</span>
-      <h1 class="h1" style="margin-top:16px; max-width:16ch;">Let's get woven in</h1>
+      <h1 class="h1" style="margin-top:16px; max-width:20ch;">Let's connect, collaborate, and create impact.</h1>
       <p class="lede" style="margin-top:14px;">Questions, partnerships, chapters, press – reach out directly using the info below.</p>
     </div>
   </section>
@@ -64,33 +68,49 @@
         </div>
         <div class="contact-way">
           <span class="dot" style="background:var(--ink);"></span>
-          <div><strong>Social</strong><p class="text-soft">@interwoven0 on Instagram &amp; Facebook, @interwoven6 on TikTok, @Interwoven-steam on YouTube.</p></div>
+          <div><strong>Social</strong><p class="text-soft">Scroll down to the footer to contact us via social media!</p></div>
         </div>
       </div>
     </div>
   </section>
 
   <section class="section" style="background:var(--cream-deep);">
-    <div class="wrap" style="max-width:800px;">
+    <div class="wrap" style="max-width:920px;">
       <div class="section-head center" data-reveal>
         <span class="eyebrow center">FAQ</span>
-        <h2 style="margin-top:16px;">Common questions</h2>
+        <h2 style="margin-top:16px;">Where Questions Meet Answers</h2>
       </div>
-      <div class="accordion" data-reveal>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger" aria-expanded="false"><span>How do I start a chapter?</span><span class="plus" aria-hidden="true"></span></button>
+      <div class="accordion faq-fun" data-reveal>
+        <div class="accordion-item faq-fun-card tone-teal" data-open="false">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="faq-fun-icon">🧵</span>
+            <span>How do I start a chapter?</span>
+            <span class="plus" aria-hidden="true"></span>
+          </button>
           <div class="accordion-panel"><div class="inner">Fill out the Start a Chapter form on the <a href="get-involved.html#start-a-chapter" style="color:var(--teal-deep); font-weight:600;">Get Involved</a> page. Someone from the board will follow up with next steps.</div></div>
         </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger" aria-expanded="false"><span>Is Interwoven a registered nonprofit?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="accordion-item faq-fun-card tone-coral" data-open="false">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="faq-fun-icon">✅</span>
+            <span>Is Interwoven a registered nonprofit?</span>
+            <span class="plus" aria-hidden="true"></span>
+          </button>
           <div class="accordion-panel"><div class="inner">Yes – Interwoven is a registered nonprofit organization, fiscally sponsored by the Hack Foundation, a 501(c)(3) public charity.</div></div>
         </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger" aria-expanded="false"><span>How can my school partner with Interwoven?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="accordion-item faq-fun-card tone-amber" data-open="false">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="faq-fun-icon">🏫</span>
+            <span>How can my school partner with Interwoven?</span>
+            <span class="plus" aria-hidden="true"></span>
+          </button>
           <div class="accordion-panel"><div class="inner">Send a note through this contact form with "School Partnership" as the subject, and we'll connect you with a chapter near you.</div></div>
         </div>
-        <div class="accordion-item" data-open="false">
-          <button class="accordion-trigger" aria-expanded="false"><span>How do I join the podcast or speak at an event?</span><span class="plus" aria-hidden="true"></span></button>
+        <div class="accordion-item faq-fun-card tone-ink" data-open="false">
+          <button class="accordion-trigger" aria-expanded="false">
+            <span class="faq-fun-icon">🎙️</span>
+            <span>How do I join the podcast or speak at an event?</span>
+            <span class="plus" aria-hidden="true"></span>
+          </button>
           <div class="accordion-panel"><div class="inner">Both have their own application forms – see the <a href="get-involved.html" style="color:var(--teal-deep); font-weight:600;">Get Involved</a> page for links.</div></div>
         </div>
       </div>
@@ -118,7 +138,16 @@
 <footer class="site-footer">
   <div class="wrap">
     <div class="footer-word">INTERWOVEN</div>
-        <div class="footer-row">
+            <div class="footer-newsletter">
+      <h4>Stay Amused!?</h4>
+      <p>Sign up for Threads of Tomorrow, Interwoven's newsletter, for events, opportunities, and stories.</p>
+      <form id="footer-newsletter-form">
+        <label for="footer-newsletter-email" class="visually-hidden">Email address</label>
+        <input type="email" id="footer-newsletter-email" placeholder="Email address" required>
+        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-row">
       <div class="footer-col">
         <h4>Connect</h4>
         <a href="about.html">About</a>

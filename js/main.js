@@ -7,6 +7,12 @@
 
   window.IW_REDUCED_MOTION = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  // The real "Threads of Tomorrow" newsletter signup -- a full Google Form
+  // (name, email, how you heard about us, etc.), so rather than faking a
+  // local capture we just send people to the real thing.
+  const NEWSLETTER_FORM_URL =
+    "https://docs.google.com/forms/d/e/1FAIpQLSe-NT7rumUBN9MvnELfLeKoipwySG_t03z5Io4uUe__Zn1Rfg/viewform?usp=header";
+
   document.addEventListener("DOMContentLoaded", () => {
     initHeader();
     initMobileNav();
@@ -16,6 +22,7 @@
     initThreadGlow();
     initPageSweep();
     initNewsletterModal();
+    initFooterNewsletter();
     initFooterYear();
   });
 
@@ -229,13 +236,22 @@
     if (form) {
       form.addEventListener("submit", (e) => {
         e.preventDefault();
-        // No backend yet -- wire this to an email service (Mailchimp,
-        // ConvertKit, Google Forms, etc.) when ready. No confirmation
-        // message is shown; the modal just closes.
+        window.open(NEWSLETTER_FORM_URL, "_blank", "noopener");
         dismiss();
         form.reset();
       });
     }
+  }
+
+  /* ---------- Footer newsletter mini-form ---------- */
+  function initFooterNewsletter() {
+    const form = document.getElementById("footer-newsletter-form");
+    if (!form) return;
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      window.open(NEWSLETTER_FORM_URL, "_blank", "noopener");
+      form.reset();
+    });
   }
 
   /* ---------- Footer year ---------- */

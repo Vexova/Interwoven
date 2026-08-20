@@ -87,12 +87,13 @@ window.IW_CHAPTERS = [
   {
     id: "massachusetts",
     name: "Interwoven Massachusetts",
-    president: "Hamsi & Dhatri",
+    president: "Hamsi Devineni & Dhatri Daggubati",
+    roleLabel: "Co-Presidents",
     city: "Massachusetts",
     region: "",
     country: "USA",
     timezone: "ET",
-    email: "dhawith3@gmail.com, hamsikadevineni@gmail.com",
+    email: "hamsikadevineni@gmail.com, dhawith3@gmail.com",
     lat: 42.4072, lng: -71.3824,
   },
 ];

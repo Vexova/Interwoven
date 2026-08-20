@@ -404,6 +404,20 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 .newsletter-modal input:focus{ border-color: var(--teal); }
 .newsletter-modal button{ padding: 15px 20px; }
 
+/* ---------- Footer newsletter mini-section ---------- */
+.footer-newsletter{ margin-bottom: 44px; padding-bottom: 40px; border-bottom: 1px solid rgba(250,246,234,0.14); }
+.footer-newsletter h4{ color: var(--cream); font-size: 1.2rem; margin-bottom: 8px; font-family: var(--font-display); font-weight: 700; }
+.footer-newsletter p{ color: rgba(250,246,234,0.65); font-size: 0.85rem; margin-bottom: 16px; max-width: 46ch; }
+.footer-newsletter form{ display: flex; gap: 10px; max-width: 440px; flex-wrap: wrap; }
+.footer-newsletter input{
+  flex: 1 1 220px; border: 1.5px solid rgba(250,246,234,0.28); border-radius: var(--r-pill);
+  padding: 12px 20px; background: transparent; color: var(--cream);
+  min-width: 0;
+}
+.footer-newsletter input::placeholder{ color: rgba(250,246,234,0.5); }
+.footer-newsletter input:focus{ border-color: var(--amber); outline: none; }
+.footer-newsletter button{ flex-shrink: 0; }
+
 /* ---------- Page transition sweep ---------- */
 .page-sweep{
   position: fixed; inset: 0; z-index: 900; pointer-events: none;
@@ -497,7 +511,9 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 .board-photo.tone-ink{ background: linear-gradient(155deg, #4b4038 0%, var(--ink) 100%); }
 .board-photo span{ padding: 14px 16px; color: var(--cream); font-size: 0.72rem; background: linear-gradient(to top, rgba(0,0,0,0.4), transparent); width: 100%; }
 .board-photo img{ position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.board-name{ padding: 16px 18px 4px; font-family: var(--font-display); font-weight: 600; }
+.board-name{ padding: 16px 18px 2px; font-family: var(--font-display); font-weight: 600; }
+.board-role{ padding: 0 18px; font-size: 0.82rem; color: var(--text-soft); font-weight: 500; }
+.board-role.always-phone{ margin-top: 2px; color: var(--teal-deep); font-weight: 600; }
 .board-detail{
   max-height: 0; overflow: hidden;
   transition: max-height var(--dur) var(--ease);
@@ -506,7 +522,7 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 .board-card:hover .board-detail, .board-card:focus-visible .board-detail, .board-card[aria-expanded="true"] .board-detail{
   max-height: 120px;
 }
-.board-detail .inner{ padding-bottom: 16px; font-size: 0.85rem; color: var(--text-soft); }
+.board-detail .inner{ padding-top: 10px; padding-bottom: 16px; font-size: 0.85rem; color: var(--text-soft); }
 .board-detail a{ color: var(--teal-deep); font-weight: 600; }
 .board-card .toggle-hint{ padding: 0 18px 14px; font-size: 0.72rem; color: var(--text-soft); }
 
@@ -538,11 +554,6 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 @media (max-width: 900px){ .chapter-directory{ grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 560px){ .chapter-directory{ grid-template-columns: 1fr; } }
 .chapter-card{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 20px; }
-.chapter-avatar{
-  width: 48px; height: 48px; border-radius: 50%; background: var(--cream-deep);
-  display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--teal-deep);
-  margin-bottom: 12px;
-}
 .chapter-card h4{ margin-bottom: 2px; }
 .chapter-card .loc{ font-size: 0.82rem; color: var(--text-soft); margin-bottom: 8px; }
 .chapter-card a{ font-size: 0.82rem; color: var(--teal-deep); font-weight: 600; }
@@ -572,14 +583,45 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 }
 .chip[aria-pressed="true"]{ background: var(--coral); border-color: var(--coral); color: var(--white); }
 
+/* ---------- Calendar filter row (All / dropdowns / buttons) ---------- */
+.cal-filters{ display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
+.cal-dropdown{ position: relative; }
+.cal-dropdown-toggle{ display: inline-flex; align-items: center; gap: 7px; cursor: pointer; }
+.cal-dropdown-toggle svg{ transition: transform var(--dur-fast) var(--ease); }
+.cal-dropdown-toggle[aria-expanded="true"] svg{ transform: rotate(180deg); }
+.cal-dropdown-toggle.has-selection{ background: var(--coral); border-color: var(--coral); color: var(--white); }
+.cal-dropdown-menu{
+  position: absolute; top: calc(100% + 8px); left: 0; z-index: 20;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md);
+  box-shadow: var(--shadow-md); padding: 8px; min-width: 220px;
+  display: flex; flex-direction: column; gap: 2px;
+  opacity: 0; visibility: hidden; transform: translateY(-6px);
+  transition: opacity var(--dur-fast) var(--ease), transform var(--dur-fast) var(--ease), visibility var(--dur-fast);
+}
+.cal-dropdown.is-open .cal-dropdown-menu{ opacity: 1; visibility: visible; transform: translateY(0); }
+.cal-dropdown-menu button{
+  text-align: left; border: none; background: transparent; border-radius: var(--r-sm);
+  padding: 10px 12px; font-size: 0.86rem; color: var(--text); font-weight: 500;
+}
+.cal-dropdown-menu button:hover{ background: var(--cream-deep); }
+.cal-dropdown-menu button[aria-pressed="true"]{ background: var(--coral); color: var(--white); }
+
 /* ---------- Editorial opportunity cards (Get Involved) ---------- */
 .opportunity{
-  display: grid; grid-template-columns: 90px 1fr auto; gap: 24px; align-items: center;
+  display: grid; grid-template-columns: 64px 1fr auto; gap: 24px; align-items: center;
   padding: 28px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--border);
   margin-bottom: 18px;
 }
 @media (max-width: 700px){ .opportunity{ grid-template-columns: 1fr; text-align: left; } }
-.opportunity .op-num{ font-family: var(--font-display); font-weight: 800; font-size: 2.2rem; color: var(--border); }
+.op-icon{
+  width: 56px; height: 56px; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white); flex-shrink: 0;
+}
+.op-icon.tone-teal{ background: var(--teal); }
+.op-icon.tone-coral{ background: var(--coral); }
+.op-icon.tone-amber{ background: var(--amber); }
+.op-icon.tone-ink{ background: var(--ink); }
 .opportunity h3{ margin-bottom: 6px; }
 .opportunity p{ color: var(--text-soft); }
 
@@ -633,3 +675,28 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 .accordion-item[data-open="true"] .plus{ background: var(--teal); transform: rotate(90deg); }
 .accordion-panel{ overflow: hidden; max-height: 0; transition: max-height var(--dur-slow) var(--ease); }
 .accordion-panel .inner{ padding: 0 4px 22px; color: var(--text-soft); max-width: 70ch; }
+
+/* ---------- Fun FAQ card grid (Contact page) ---------- */
+.faq-fun{ display: grid; grid-template-columns: 1fr 1fr; gap: 18px; border: none; }
+@media (max-width: 700px){ .faq-fun{ grid-template-columns: 1fr; } }
+.faq-fun-card{
+  border: none; border-radius: var(--r-lg); padding: 6px;
+  transition: transform var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+}
+.faq-fun-card:hover{ transform: translateY(-4px) rotate(-0.4deg); box-shadow: var(--shadow-md); }
+.faq-fun-card.tone-teal{ background: rgba(57,127,127,0.12); }
+.faq-fun-card.tone-coral{ background: rgba(241,112,83,0.12); }
+.faq-fun-card.tone-amber{ background: rgba(230,172,70,0.16); }
+.faq-fun-card.tone-ink{ background: rgba(34,28,36,0.07); }
+.faq-fun-card .accordion-trigger{
+  padding: 18px 16px; border-radius: var(--r-md); gap: 12px;
+}
+.faq-fun-icon{
+  font-size: 1.5rem; flex-shrink: 0; width: 44px; height: 44px; border-radius: 50%;
+  background: var(--surface); display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-sm);
+}
+.faq-fun-card .accordion-trigger span:not(.faq-fun-icon):not(.plus){ flex: 1; }
+.faq-fun-card .plus{ background: var(--surface); }
+.faq-fun-card .accordion-panel .inner{ padding: 0 16px 20px 76px; }
+

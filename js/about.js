@@ -21,9 +21,10 @@
     return window.IWEscapeHTML ? window.IWEscapeHTML(s) : s;
   }
 
-  /* ---------- Executive board + Social Media team ----------
-     Info is exposed on hover AND on click/focus (not hover-only),
-     so it works with keyboard and touch, not just a mouse. */
+  /* ---------- Executive Board ----------
+     Role is always visible under the name; email (and phone, unless
+     flagged alwaysShowPhone) is revealed on hover AND on click/focus
+     (not hover-only), so it works with keyboard and touch too. */
   function renderBoardGroup(mountId, members) {
     const mount = document.getElementById(mountId);
     if (!mount || !members.length) return;
@@ -39,11 +40,12 @@
           }
         </div>
         <div class="board-name">${esc(b.name)}</div>
+        <p class="board-role">${esc(b.role)}</p>
+        ${b.alwaysShowPhone && b.phone ? `<p class="board-role always-phone">${esc(b.phone)}</p>` : ""}
         <div class="board-detail">
           <div class="inner">
-            <p style="font-weight:600; color:var(--text);">${esc(b.role)}</p>
             <a href="mailto:${esc(b.email)}">${esc(b.email)}</a>
-            ${b.phone ? `<p>${esc(b.phone)}</p>` : ""}
+            ${b.phone && !b.alwaysShowPhone ? `<p>${esc(b.phone)}</p>` : ""}
           </div>
         </div>
         <p class="toggle-hint">Tap for contact info</p>
@@ -61,14 +63,7 @@
 
   function renderBoard() {
     if (!window.IW_BOARD) return;
-    renderBoardGroup(
-      "board-grid-exec",
-      window.IW_BOARD.filter((b) => b.team === "executive")
-    );
-    renderBoardGroup(
-      "board-grid-social",
-      window.IW_BOARD.filter((b) => b.team === "social")
-    );
+    renderBoardGroup("board-grid-exec", window.IW_BOARD);
   }
 
   /* ---------- Thread detail sections ---------- */
