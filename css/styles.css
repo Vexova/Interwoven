@@ -113,12 +113,11 @@ h1,h2,h3,h4,h5,p,figure{ margin: 0; }
 @media (max-width: 640px){ .grid-2, .grid-3{ grid-template-columns: 1fr; } }
 
 .eyebrow{
-  display: inline-flex; align-items: flex-start; gap: 8px;
+  display: inline-flex; align-items: flex-start;
   font-size: var(--step--1); font-weight: 600; letter-spacing: 0.16em;
   text-transform: uppercase; color: var(--coral-deep);
   text-align: left;
 }
-.eyebrow::before{ content:""; width: 24px; height: 2px; background: currentColor; margin-top: 0.65em; flex-shrink: 0; }
 .eyebrow.center{ justify-content: center; }
 
 h1,.h1{ font-family: var(--font-display); font-weight: 800; font-size: var(--step-5); line-height: 1.02; letter-spacing: -0.02em; color: var(--ink); }
