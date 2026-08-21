@@ -12,7 +12,7 @@ window.IW_TESTIMONIALS = [
   },
   {
     id: "t2",
-    quote: "As a neurodiverse student, I always felt left out in science class. The Inclusion Thread changed that – now I'm teaching other kids coding!",
+    quote: "As a neurodiverse student, I always felt left out in science class. The Inclusion Thread changed that. Now I'm teaching other kids coding!",
     name: "Jordan T.",
     role: "Student",
   },

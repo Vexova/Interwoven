@@ -36,7 +36,7 @@
           ${
             b.photo
               ? `<img src="${b.photo}" alt="${esc(b.name)}">`
-              : `<span>[Headshot: ${esc(b.name)} – see assets/README.md]</span>`
+              : `<span>[Headshot coming soon: ${esc(b.name)}]</span>`
           }
         </div>
         <div class="board-name">${esc(b.name)}</div>
@@ -64,6 +64,8 @@
   function renderBoard() {
     if (!window.IW_BOARD) return;
     renderBoardGroup("board-grid-exec", window.IW_BOARD);
+    if (window.IW_SOCIAL_BOARD) renderBoardGroup("board-grid-social", window.IW_SOCIAL_BOARD);
+    if (window.IW_WEBDESIGN_BOARD) renderBoardGroup("board-grid-webdesign", window.IW_WEBDESIGN_BOARD);
   }
 
   /* ---------- Thread detail sections ---------- */

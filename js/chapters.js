@@ -28,10 +28,20 @@
     mount.innerHTML = window.IW_CHAPTERS.map(
       (c) => `
       <div class="chapter-card" data-reveal>
-        <h4 class="h4">${esc(placeName(c.name))}</h4>
-        <p class="loc">${esc([c.city, c.region, c.country].filter(Boolean).join(", "))}</p>
-        <p class="text-soft" style="font-size:.85rem;">${esc(c.president)} &middot; ${esc(c.roleLabel || "President")}</p>
-        <a href="mailto:${esc(c.email.split(",")[0].trim())}">Email chapter →</a>
+        ${
+          c.photo
+            ? `<div class="chapter-photo-wrap">
+                 <img src="${esc(c.photo)}" alt="${esc(c.photoCaption || placeName(c.name))}" loading="lazy">
+                 <span class="chapter-photo-credit">${esc(c.photoCaption || "")}${c.photoCredit ? ` &middot; via Wikimedia Commons` : ""}</span>
+               </div>`
+            : ""
+        }
+        <div class="chapter-card-body">
+          <h4 class="h4">${esc(placeName(c.name))}</h4>
+          <p class="loc">${esc([c.city, c.region, c.country].filter(Boolean).join(", "))}</p>
+          <p class="text-soft" style="font-size:.85rem;">${esc(c.president)} &middot; ${esc(c.roleLabel || "President")}</p>
+          <a href="mailto:${esc(c.email.split(",")[0].trim())}">Email chapter →</a>
+        </div>
       </div>`
     ).join("");
     if (window.IWRevealScan) window.IWRevealScan();
@@ -101,5 +111,17 @@
     });
 
     if (bounds.length) map.fitBounds(bounds, { padding: [40, 40], maxZoom: 5 });
+
+    // "Home" button: return the map to its original opening orientation.
+    const homeBtn = document.getElementById("map-home-btn");
+    if (homeBtn) {
+      homeBtn.addEventListener("click", () => {
+        if (bounds.length) {
+          map.fitBounds(bounds, { padding: [40, 40], maxZoom: 5 });
+        } else {
+          map.setView([20, 10], 2);
+        }
+      });
+    }
   }
 })();

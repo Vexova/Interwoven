@@ -63,6 +63,38 @@
       ).join("");
     }
 
+    // Social Media Board
+    const socialMount = document.getElementById("directory-social");
+    if (socialMount && window.IW_SOCIAL_BOARD) {
+      socialMount.innerHTML = window.IW_SOCIAL_BOARD.map((b) =>
+        cardHTML({
+          name: b.name,
+          role: b.role,
+          email: b.email,
+          phone: b.phone,
+          alwaysShowPhone: b.alwaysShowPhone,
+          tone: b.tone,
+          photo: b.photo,
+        })
+      ).join("");
+    }
+
+    // Website Design Board
+    const webdesignMount = document.getElementById("directory-webdesign");
+    if (webdesignMount && window.IW_WEBDESIGN_BOARD) {
+      webdesignMount.innerHTML = window.IW_WEBDESIGN_BOARD.map((b) =>
+        cardHTML({
+          name: b.name,
+          role: b.role,
+          email: b.email,
+          phone: b.phone,
+          alwaysShowPhone: b.alwaysShowPhone,
+          tone: b.tone,
+          photo: b.photo,
+        })
+      ).join("");
+    }
+
     // Chapter presidents
     const chapterMount = document.getElementById("directory-chapters");
     if (chapterMount && window.IW_CHAPTERS) {

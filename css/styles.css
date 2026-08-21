@@ -367,7 +367,8 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 /* ---------- Newsletter popup (prominent, centered modal) ---------- */
 .newsletter-overlay{
   position: fixed; inset: 0; z-index: 500;
-  background: rgba(34,28,36,0.6);
+  background: rgba(24,18,26,0.72);
+  backdrop-filter: blur(3px);
   display: flex; align-items: center; justify-content: center;
   padding: 20px;
   opacity: 0; visibility: hidden;
@@ -376,33 +377,33 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 .newsletter-overlay.is-open{ opacity: 1; visibility: visible; }
 .newsletter-modal{
   background: var(--surface); border-radius: var(--r-lg);
-  max-width: 460px; width: 100%; padding: 48px 40px 40px;
+  max-width: 540px; width: 100%; padding: 56px 48px 46px;
   position: relative; text-align: center;
-  box-shadow: var(--shadow-lg);
-  transform: translateY(18px) scale(0.96);
+  box-shadow: 0 30px 70px -12px rgba(24,18,26,0.55), 0 0 0 1px rgba(0,0,0,0.03);
+  transform: translateY(24px) scale(0.94);
   transition: transform var(--dur) var(--ease);
 }
 .newsletter-overlay.is-open .newsletter-modal{ transform: translateY(0) scale(1); }
 .newsletter-modal::before{
-  content:""; position: absolute; top: 0; left: 28px; right: 28px; height: 5px;
+  content:""; position: absolute; top: 0; left: 0; right: 0; height: 7px;
   background: linear-gradient(90deg, var(--teal), var(--coral), var(--amber));
-  border-radius: 0 0 5px 5px;
+  border-radius: var(--r-lg) var(--r-lg) 0 0;
 }
 .newsletter-modal-close{
-  position: absolute; top: 14px; right: 16px; width: 36px; height: 36px; border-radius: 50%;
-  border: none; background: transparent; font-size: 1.3rem; color: var(--text-soft); line-height: 1;
+  position: absolute; top: 16px; right: 18px; width: 38px; height: 38px; border-radius: 50%;
+  border: none; background: var(--cream); font-size: 1.4rem; color: var(--text-soft); line-height: 1;
 }
-.newsletter-modal-close:hover{ background: var(--cream-deep); }
-.newsletter-modal .eyebrow{ justify-content: center; margin-bottom: 14px; }
-.newsletter-modal h3{ font-size: var(--step-2); }
-.newsletter-modal p{ color: var(--text-soft); margin-top: 12px; }
-.newsletter-modal form{ display: flex; flex-direction: column; gap: 12px; margin-top: 26px; }
+.newsletter-modal-close:hover{ background: var(--cream-deep); color: var(--text); }
+.newsletter-modal .eyebrow{ justify-content: center; margin-bottom: 16px; }
+.newsletter-modal h3{ font-size: clamp(1.7rem, 2.4vw, var(--step-3)); font-weight: 800; }
+.newsletter-modal p{ color: var(--text-soft); margin-top: 14px; font-size: 1.05rem; }
+.newsletter-modal form{ display: flex; flex-direction: column; gap: 14px; margin-top: 30px; }
 .newsletter-modal input{
-  border: 1.5px solid var(--border); border-radius: var(--r-pill);
-  padding: 15px 20px; background: var(--cream); color: var(--text); text-align: center; font-size: 1rem;
+  border: 2px solid var(--border); border-radius: var(--r-pill);
+  padding: 17px 22px; background: var(--cream); color: var(--text); text-align: center; font-size: 1.05rem;
 }
-.newsletter-modal input:focus{ border-color: var(--teal); }
-.newsletter-modal button{ padding: 15px 20px; }
+.newsletter-modal input:focus{ border-color: var(--teal); outline: none; }
+.newsletter-modal button{ padding: 17px 22px; font-size: 1.05rem; font-weight: 700; box-shadow: var(--shadow-sm); }
 
 /* ---------- Footer newsletter mini-section ---------- */
 .footer-newsletter{ margin-bottom: 44px; padding-bottom: 40px; border-bottom: 1px solid rgba(250,246,234,0.14); }
@@ -539,7 +540,18 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 }
 
 /* ---------- Chapters map + directory ---------- */
+.map-wrap{ position: relative; }
 #chapters-map{ height: 520px; border-radius: var(--r-lg); overflow: hidden; border: 1px solid var(--border); box-shadow: var(--shadow-sm); }
+.map-home-btn{
+  position: absolute; top: 12px; left: 12px; z-index: 400;
+  width: 38px; height: 38px; border-radius: var(--r-md, 10px);
+  background: var(--surface); border: 1px solid var(--border); color: var(--text);
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: var(--shadow-sm); cursor: pointer;
+  transition: background var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+.map-home-btn:hover{ background: var(--cream-deep); transform: translateY(-1px); }
+.map-home-btn:active{ transform: translateY(0); }
 .map-fallback{
   height: 520px; border-radius: var(--r-lg); border: 1px dashed var(--border);
   display: flex; align-items: center; justify-content: center; text-align: center; padding: 40px;
@@ -548,7 +560,15 @@ h4,.h4{ font-family: var(--font-display); font-weight: 600; font-size: var(--ste
 .chapter-directory{ display: grid; grid-template-columns: repeat(4,1fr); gap: 20px; }
 @media (max-width: 900px){ .chapter-directory{ grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 560px){ .chapter-directory{ grid-template-columns: 1fr; } }
-.chapter-card{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); padding: 20px; }
+.chapter-card{ background: var(--surface); border: 1px solid var(--border); border-radius: var(--r-md); overflow: hidden; }
+.chapter-card .chapter-photo-wrap{ position: relative; width: 100%; aspect-ratio: 16 / 9; overflow: hidden; background: var(--cream-deep); }
+.chapter-card .chapter-photo-wrap img{ width: 100%; height: 100%; object-fit: cover; display: block; }
+.chapter-card .chapter-photo-credit{
+  position: absolute; bottom: 6px; right: 8px; font-size: 0.65rem; color: #fff;
+  background: rgba(0,0,0,0.45); padding: 2px 7px; border-radius: var(--r-pill);
+  line-height: 1.4;
+}
+.chapter-card .chapter-card-body{ padding: 20px; }
 .chapter-card h4{ margin-bottom: 2px; }
 .chapter-card .loc{ font-size: 0.82rem; color: var(--text-soft); margin-bottom: 8px; }
 .chapter-card a{ font-size: 0.82rem; color: var(--teal-deep); font-weight: 600; }
