@@ -78,18 +78,18 @@ window.IW_CHAPTERS = [
     lat: 36.1699, lng: -115.1398,
   },
   {
-    id: "bozeman",
-    name: "Interwoven Bozeman",
-    president: "Jet Locati",
-    city: "Bozeman",
-    region: "Montana",
-    country: "USA",
-    timezone: "MT",
-    email: "jetlocati4922@gmail.com",
-    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/File:Bozeman%2C%20MT%20from%20Saddle%20Peak%20in%20the%20Bridger%20Mountains%2C%20Montana%2C%20USA.jpg?width=900",
-    photoCaption: "The Bridger Mountains",
+    id: "ciudad-real",
+    name: "Interwoven Ciudad Real",
+    president: "David Sánchez",
+    city: "Ciudad Real",
+    region: "Castilla-La Mancha",
+    country: "Spain",
+    timezone: "CET",
+    email: "",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/File:Puerta%20de%20Toledo%20en%20Ciudad%20Real.%20Monumento%20Nacional.jpg?width=900",
+    photoCaption: "Puerta de Toledo",
     photoCredit: "Wikimedia Commons",
-    lat: 45.6770, lng: -111.0429,
+    lat: 38.9848, lng: -3.9275,
   },
   {
     id: "concord",
@@ -135,18 +135,60 @@ window.IW_CHAPTERS = [
     lat: -1.3667, lng: 36.6500,
   },
   {
-    id: "south-charleston",
-    name: "Interwoven South Charleston",
-    president: "Hawa Ibrahim",
-    city: "South Charleston",
-    region: "West Virginia",
-    country: "USA",
-    timezone: "ET",
-    email: "hibrah09@gmail.com",
-    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/File:Criel%20Mound.jpg?width=900",
-    photoCaption: "The Criel (South Charleston) Mound",
+    id: "bahir-dar",
+    name: "Interwoven Bahir Dar",
+    president: "Haile Amanu",
+    city: "Bahir Dar",
+    region: "Amhara Region",
+    country: "Ethiopia",
+    timezone: "EAT",
+    email: "",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/File:ET%20Bahir%20Dar%20asv2018-02%20img17%20Tis%20Issat.jpg?width=900",
+    photoCaption: "Blue Nile Falls, near Bahir Dar",
     photoCredit: "Wikimedia Commons",
-    lat: 38.3676, lng: -81.6995,
+    lat: 11.5936, lng: 37.3908,
+  },
+  {
+    id: "mekelle",
+    name: "Interwoven Mekelle",
+    president: "Mikias Birhane Amare",
+    city: "Mekelle",
+    region: "Tigray Region",
+    country: "Ethiopia",
+    timezone: "EAT",
+    email: "",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/File:ET%20Mekele%20asv2018-01%20img19%20pano%20from%20Choma.jpg?width=900",
+    photoCaption: "Mekelle",
+    photoCredit: "Wikimedia Commons",
+    lat: 13.4967, lng: 39.4753,
+  },
+  {
+    id: "al-mahalah-al-kubra",
+    name: "Interwoven Al Mahalah Al Kubra",
+    president: "Amr Ahmed Fawzy",
+    city: "Al Mahalah Al Kubra",
+    region: "Gharbia Governorate",
+    country: "Egypt",
+    timezone: "EEST",
+    email: "",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/File:El%20Mahalla%20El%20Kobra%20gate.JPG?width=900",
+    photoCaption: "El Mahalla El Kobra gate",
+    photoCredit: "Wikimedia Commons",
+    lat: 30.9700, lng: 31.1656,
+  },
+  {
+    id: "kolkata",
+    name: "Interwoven Kolkata",
+    president: "Ayantika Dey",
+    city: "Kolkata",
+    region: "West Bengal",
+    country: "India",
+    timezone: "IST",
+    email: "",
+    photo: "https://commons.wikimedia.org/wiki/Special:FilePath/File:VictoriaMemorial%20Kolkata%207524.jpg?width=900",
+    photoCaption: "Victoria Memorial",
+    photoCredit: "Wikimedia Commons",
+    lat: 22.5726, lng: 88.3639,
   },
   {
     id: "massachusetts",
@@ -163,4 +205,51 @@ window.IW_CHAPTERS = [
     photoCredit: "Wikimedia Commons",
     lat: 42.4072, lng: -71.3824,
   },
+];
+
+/* =========================================================
+   CHAPTER MEMBERS
+   One entry per person (not per chapter) for the Full Directory
+   page's "Chapter Members" section - lets co-presidents and
+   additional chapter members each get their own card instead of
+   being combined into a single chapter card.
+   ========================================================= */
+window.IW_CHAPTER_MEMBERS = [
+  { id: "jana", name: "Jana Islam", role: "Chapter President", chapter: "Interwoven Tanta", email: "janaislamradwan312@gmail.com", tone: "teal" },
+  { id: "sara-abdelhamid", name: "Sara Abdelhamid", role: "Member", chapter: "Interwoven Tanta", email: "saraabdelhamidabukhadra@gmail.com", tone: "coral" },
+
+  { id: "aryaman", name: "Aryaman Mehra", role: "Chapter President", chapter: "Interwoven Toronto", email: "aryamanqax@gmail.com", tone: "amber" },
+
+  { id: "nakhshathra", name: "Nakhshathra Jakkula", role: "Chapter President", chapter: "Interwoven Santa Clara", email: "nakshathra.jakkula@gmail.com", tone: "ink" },
+  { id: "advika", name: "Advika Pathak", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "teal" },
+  { id: "giang", name: "Giang Hoang", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "coral" },
+  { id: "ruchi", name: "Ruchi Ghapure", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "amber" },
+  { id: "jayne", name: "Jayne Chen", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "ink" },
+  { id: "jiya", name: "Jiya Tejura", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "teal" },
+  { id: "solynn", name: "Solynn Jeon", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "coral" },
+  { id: "evaline", name: "Evaline Bhandari", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "amber" },
+
+  { id: "salma", name: "Salma Mahmoud", role: "Chapter President", chapter: "Interwoven Quena", email: "aseelmahmoud399@gmail.com", tone: "ink" },
+
+  { id: "brendan", name: "Brendan Teague", role: "Chapter President", chapter: "Interwoven Las Vegas", email: "brendanteague21@gmail.com", tone: "teal" },
+
+  { id: "david-sanchez", name: "David Sánchez", role: "Chapter President", chapter: "Interwoven Ciudad Real", email: "", tone: "coral" },
+
+  { id: "mark", name: "Mark Johnson", role: "Chapter Co-President", chapter: "Interwoven Concord", email: "mjohnson27@concordcarlisle.org", tone: "amber" },
+  { id: "madeline", name: "Madeline Minkin", role: "Chapter Co-President", chapter: "Interwoven Concord", email: "mminkin27@concordcarlisle.org", tone: "ink" },
+
+  { id: "prathik", name: "Prathik Karthik", role: "Chapter President", chapter: "Interwoven Tampa", email: "prathik.karthik9@gmail.com", tone: "teal" },
+
+  { id: "james", name: "James Ouma", role: "Chapter President", chapter: "Interwoven Ngong", email: "ojamesouma@gmail.com", tone: "coral" },
+
+  { id: "haile", name: "Haile Amanu", role: "Chapter President", chapter: "Interwoven Bahir Dar", email: "", tone: "amber" },
+
+  { id: "mikias", name: "Mikias Birhane Amare", role: "Chapter President", chapter: "Interwoven Mekelle", email: "", tone: "ink" },
+
+  { id: "amr", name: "Amr Ahmed Fawzy", role: "Chapter President", chapter: "Interwoven Al Mahalah Al Kubra", email: "", tone: "teal" },
+
+  { id: "ayantika", name: "Ayantika Dey", role: "Chapter President", chapter: "Interwoven Kolkata", email: "", tone: "coral" },
+
+  { id: "hamsi-chapter", name: "Hamsi Devineni", role: "Chapter Co-President", chapter: "Interwoven Massachusetts", email: "hamsikadevineni@gmail.com", tone: "amber", photo: "assets/images/hamsika-headshot.png" },
+  { id: "dhatri-chapter", name: "Dhatri Daggubati", role: "Chapter Co-President", chapter: "Interwoven Massachusetts", email: "dhawith3@gmail.com", tone: "ink", photo: "assets/images/dhatri-headshot.jpeg" },
 ];

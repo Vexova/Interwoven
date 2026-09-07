@@ -40,7 +40,7 @@
           <h4 class="h4">${esc(placeName(c.name))}</h4>
           <p class="loc">${esc([c.city, c.region, c.country].filter(Boolean).join(", "))}</p>
           <p class="text-soft" style="font-size:.85rem;">${esc(c.president)} &middot; ${esc(c.roleLabel || "President")}</p>
-          <a href="mailto:${esc(c.email.split(",")[0].trim())}">Email chapter →</a>
+          ${c.email ? `<a href="mailto:${esc(c.email.split(",")[0].trim())}">Email chapter →</a>` : `<span class="text-soft" style="font-size:.8rem;">Contact coming soon</span>`}
         </div>
       </div>`
     ).join("");
@@ -96,7 +96,7 @@
     const bounds = [];
     chapters.forEach((c, i) => {
       const color = threadColors[i % threadColors.length];
-      const emails = c.email.split(",").map((e) => e.trim()).join(" & ");
+      const emails = c.email ? c.email.split(",").map((e) => e.trim()).join(" & ") : "";
       const marker = L.marker([c.lat, c.lng], { icon: markerIcon(color), title: placeName(c.name) }).addTo(map);
       marker.bindTooltip(placeName(c.name), { direction: "top", offset: [0, -8] });
       marker.bindPopup(
@@ -104,7 +104,7 @@
            <h4>${esc(placeName(c.name))}</h4>
            <p>${esc([c.city, c.region, c.country].filter(Boolean).join(", "))}</p>
            <p><strong>${esc(c.president)}</strong> &middot; ${esc(c.roleLabel || "Chapter President")}</p>
-           <p>${emails.split(" & ").map((e) => `<a href="mailto:${esc(e)}">${esc(e)}</a>`).join(" &amp; ")}</p>
+           ${emails ? `<p>${emails.split(" & ").map((e) => `<a href="mailto:${esc(e)}">${esc(e)}</a>`).join(" &amp; ")}</p>` : ""}
          </div>`
       );
       bounds.push([c.lat, c.lng]);

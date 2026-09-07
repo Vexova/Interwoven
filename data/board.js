@@ -62,10 +62,10 @@ window.IW_BOARD = [
    ========================================================= */
 window.IW_SOCIAL_BOARD = [
   {
-    id: "liliana",
-    name: "Liliana Gonzalez",
+    id: "sai-swaroop",
+    name: "Sai Swaroop Singireddy",
     role: "Member",
-    email: "lilianagonzalezz415@gmail.com",
+    email: "",
     phone: "",
     tone: "coral",
     team: "social",

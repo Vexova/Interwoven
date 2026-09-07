@@ -36,7 +36,7 @@
         ${entry.alwaysShowPhone && entry.phone ? `<p class="board-role always-phone">${esc(entry.phone)}</p>` : ""}
         <div class="board-detail">
           <div class="inner">
-            <a href="mailto:${esc(entry.email)}">${esc(entry.email)}</a>
+            ${entry.email ? `<a href="mailto:${esc(entry.email)}">${esc(entry.email)}</a>` : `<p>Contact coming soon</p>`}
             ${entry.phone && !entry.alwaysShowPhone ? `<p>${esc(entry.phone)}</p>` : ""}
           </div>
         </div>
@@ -45,7 +45,6 @@
   }
 
   function renderDirectory() {
-    const tones = ["teal", "coral", "amber", "ink"];
 
     // Executive Board
     const boardMount = document.getElementById("directory-board");
@@ -95,16 +94,16 @@
       ).join("");
     }
 
-    // Chapter presidents
+    // Chapter members (one card per person)
     const chapterMount = document.getElementById("directory-chapters");
-    if (chapterMount && window.IW_CHAPTERS) {
-      chapterMount.innerHTML = window.IW_CHAPTERS.map((c, i) =>
+    if (chapterMount && window.IW_CHAPTER_MEMBERS) {
+      chapterMount.innerHTML = window.IW_CHAPTER_MEMBERS.map((m) =>
         cardHTML({
-          name: c.president,
-          role: `${c.roleLabel || "Chapter President"}, ${placeName(c.name)}`,
-          email: c.email.split(",")[0].trim(),
-          tone: tones[i % tones.length],
-          photo: null,
+          name: m.name,
+          role: `${m.role}, ${placeName(m.chapter)}`,
+          email: m.email,
+          tone: m.tone,
+          photo: m.photo || null,
         })
       ).join("");
     }
