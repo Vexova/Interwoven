@@ -215,13 +215,13 @@ window.IW_CHAPTERS = [
    being combined into a single chapter card.
    ========================================================= */
 window.IW_CHAPTER_MEMBERS = [
-  { id: "jana", name: "Jana Islam", role: "Chapter President", chapter: "Interwoven Tanta", email: "janaislamradwan312@gmail.com", tone: "teal" },
-  { id: "sara-abdelhamid", name: "Sara Abdelhamid", role: "Member", chapter: "Interwoven Tanta", email: "saraabdelhamidabukhadra@gmail.com", tone: "coral" },
+  { id: "jana", name: "Jana Islam", role: "Chapter President", chapter: "Interwoven Tanta", email: "janaislamradwan312@gmail.com", tone: "teal", photo: "assets/images/jana-headshot.jpg" },
+  { id: "sara-abdelhamid", name: "Sara Abdelhamid", role: "Member", chapter: "Interwoven Tanta", email: "saraabdelhamidabukhadra@gmail.com", tone: "coral", photo: "assets/images/sara-headshot.jpg" },
 
   { id: "aryaman", name: "Aryaman Mehra", role: "Chapter President", chapter: "Interwoven Toronto", email: "aryamanqax@gmail.com", tone: "amber" },
 
-  { id: "nakhshathra", name: "Nakhshathra Jakkula", role: "Chapter President", chapter: "Interwoven Santa Clara", email: "nakshathra.jakkula@gmail.com", tone: "ink" },
-  { id: "advika", name: "Advika Pathak", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "teal" },
+  { id: "nakhshathra", name: "Nakhshathra Jakkula", role: "Chapter President", chapter: "Interwoven Santa Clara", email: "nakshathra.jakkula@gmail.com", tone: "ink", photo: "assets/images/nakhshathra-headshot.jpg" },
+  { id: "advika", name: "Advika Pathak", role: "Member", chapter: "Interwoven Santa Clara", email: "helloadvika0311@gmail.com", tone: "teal", photo: "assets/images/advika-headshot.jpg" },
   { id: "giang", name: "Giang Hoang", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "coral" },
   { id: "ruchi", name: "Ruchi Ghapure", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "amber" },
   { id: "jayne", name: "Jayne Chen", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "ink" },
@@ -229,14 +229,14 @@ window.IW_CHAPTER_MEMBERS = [
   { id: "solynn", name: "Solynn Jeon", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "coral" },
   { id: "evaline", name: "Evaline Bhandari", role: "Member", chapter: "Interwoven Santa Clara", email: "", tone: "amber" },
 
-  { id: "salma", name: "Salma Mahmoud", role: "Chapter President", chapter: "Interwoven Quena", email: "aseelmahmoud399@gmail.com", tone: "ink" },
+  { id: "salma", name: "Salma Mahmoud", role: "Chapter President", chapter: "Interwoven Quena", email: "aseelmahmoud399@gmail.com", tone: "ink", photo: "assets/images/salma-headshot.jpg" },
 
   { id: "brendan", name: "Brendan Teague", role: "Chapter President", chapter: "Interwoven Las Vegas", email: "brendanteague21@gmail.com", tone: "teal" },
 
   { id: "david-sanchez", name: "David Sánchez", role: "Chapter President", chapter: "Interwoven Ciudad Real", email: "", tone: "coral" },
 
-  { id: "mark", name: "Mark Johnson", role: "Chapter Co-President", chapter: "Interwoven Concord", email: "mjohnson27@concordcarlisle.org", tone: "amber" },
-  { id: "madeline", name: "Madeline Minkin", role: "Chapter Co-President", chapter: "Interwoven Concord", email: "mminkin27@concordcarlisle.org", tone: "ink" },
+  { id: "mark", name: "Mark Johnson", role: "Chapter Co-President", chapter: "Interwoven Concord", email: "mjohnson27@concordcarlisle.org", tone: "amber", photo: "assets/images/mark-headshot.jpg" },
+  { id: "madeline", name: "Madeline Minkin", role: "Chapter Co-President", chapter: "Interwoven Concord", email: "mminkin27@concordcarlisle.org", tone: "ink", photo: "assets/images/madeline-headshot.jpg" },
 
   { id: "prathik", name: "Prathik Karthik", role: "Chapter President", chapter: "Interwoven Tampa", email: "prathik.karthik9@gmail.com", tone: "teal" },
 
@@ -246,9 +246,9 @@ window.IW_CHAPTER_MEMBERS = [
 
   { id: "mikias", name: "Mikias Birhane Amare", role: "Chapter President", chapter: "Interwoven Mekelle", email: "", tone: "ink" },
 
-  { id: "amr", name: "Amr Ahmed Fawzy", role: "Chapter President", chapter: "Interwoven Al Mahalah Al Kubra", email: "", tone: "teal" },
+  { id: "amr", name: "Amr Ahmed Fawzy", role: "Chapter President", chapter: "Interwoven Al Mahalah Al Kubra", email: "amr.fawzi.professional@gmail.com", tone: "teal", photo: "assets/images/amr-headshot.jpg" },
 
-  { id: "ayantika", name: "Ayantika Dey", role: "Chapter President", chapter: "Interwoven Kolkata", email: "", tone: "coral" },
+  { id: "ayantika", name: "Ayantika Dey", role: "Chapter President", chapter: "Interwoven Kolkata", email: "ayantikadey02@gmail.com", tone: "coral", photo: "assets/images/ayantika-headshot.jpg" },
 
   { id: "hamsi-chapter", name: "Hamsi Devineni", role: "Chapter Co-President", chapter: "Interwoven Massachusetts", email: "hamsikadevineni@gmail.com", tone: "amber", photo: "assets/images/hamsika-headshot.png" },
   { id: "dhatri-chapter", name: "Dhatri Daggubati", role: "Chapter Co-President", chapter: "Interwoven Massachusetts", email: "dhawith3@gmail.com", tone: "ink", photo: "assets/images/dhatri-headshot.jpeg" },

@@ -16,7 +16,7 @@ window.IW_BOARD = [
     phone: "(508) 369-4068",
     tone: "teal",
     team: "executive",
-    photo: "assets/images/dhatri-headshot.jpeg",
+    photo: "assets/images/dhatri-headshot.jpg",
   },
   {
     id: "hamsika",
@@ -26,7 +26,7 @@ window.IW_BOARD = [
     phone: "(774) 789-7157",
     tone: "coral",
     team: "executive",
-    photo: "assets/images/hamsika-headshot.png",
+    photo: "assets/images/hamsi-headshot.jpg",
   },
   {
     id: "vedasri",
@@ -45,6 +45,7 @@ window.IW_BOARD = [
     phone: "",
     tone: "amber",
     team: "executive",
+    photo: "assets/images/sanam-headshot.jpg",
   },
   {
     id: "harshith",
@@ -54,6 +55,7 @@ window.IW_BOARD = [
     phone: "",
     tone: "teal",
     team: "executive",
+    photo: "assets/images/harshith-headshot.jpg",
   },
 ];
 
@@ -69,6 +71,7 @@ window.IW_SOCIAL_BOARD = [
     phone: "",
     tone: "coral",
     team: "social",
+    photo: "assets/images/saiswaroop-headshot.jpg",
   },
   {
     id: "jomei",
@@ -78,6 +81,7 @@ window.IW_SOCIAL_BOARD = [
     phone: "",
     tone: "amber",
     team: "social",
+    photo: "assets/images/jomei-headshot.jpg",
   },
   {
     id: "viswadatha",
